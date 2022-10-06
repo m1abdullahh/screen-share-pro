@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "RobotoCondensed";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url("../webfonts/RobotoCondensed-Regular.woff") format("woff");
+    src: url("../webfonts/RobotoCondensed-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Baloo 2";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url("../webfonts/Baloo2-Regular.woff") format("woff");
+    src: url("../webfonts/Baloo2-Regular.woff2") format("woff2");
+}
+.heading-1.intro-heading {
+    font-family: 'RobotoCondensed';
+    /* visibility: hidden; */
+    font-weight: bold;
+    /* text-align: center; */
+    /* opacity: 0; */
+    /* animation: down-shift-opacity 2s ease-in-out 1; */
+    /* font-size: 4rem;
+    letter-spacing: 10px; */
+}
+p.copyright-desc {
+    font-family: 'RobotoCondensed';
+    font-weight: bold;
+    max-width: 80%;
+}
+hr.thick {
+    border-top: 3px solid black;
+}
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    font-family: 'RobotoCondensed';
+    /* margin-left: -125px; */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 30;
+    /* left: 50%; */
+    bottom: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 35px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+/* 
+@keyframes down-shift-opacity {
+     0% {
+        margin-top: -8rem;
+    }
+     25% {
+        opacity: .25;
+        letter-spacing: 3px;
+    }
+     50% {
+        opacity: 0;
+        font-size: 2.3rem;
+        letter-spacing: 0px;
+    } 
+     75% {
+        opacity: .75;
+        letter-spacing: 1px;
+    } 
+    100% {
+        padding-top: 0px;
+        margin-top: 0px;
+}  */
+/* @keyframes size-shift {
+    0% {font-size: 0;
+    letter-spacing: 0;}
+    75% {font-size: 3rem; letter-spacing: 4px;}
+    100% {font-size: 2.5rem; letter-spacing: 0px;}
+} */

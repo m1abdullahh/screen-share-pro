@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenSharePro | Homepage</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./all.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="jumbotron header-content">
+        <div id="snackbar"></div>
+        <h1 class="heading-1 intro-heading">
+            ScreenSharePro - P2P Screen Sharing ╰(*°▽°*)╯
+        </h1>
+        <p class="copyright-desc">
+            &copy; Abdullah 2022
+        </p>
+        <hr class="thick">
+        <p class="copyright-desc">
+            <span class="fa fa-info">.</span>
+            This simple web app shares a user's display with another <abbr title="User">peer</abbr> on the network.
+            One of the peer is <abbr title="Ask admin for more info and to know how you can become the initiator.">(somehow)</abbr> configured as an <abbr title="One of the connected peers that can start the sharing."><i>Initiator</i></abbr> and the other
+            one as a peer.
+        </p>
+        <p class="copyright-desc">
+            <span class="fa fa-info">.</span>
+            This app uses <abbr title="peer-to-peer">p2p</abbr> 🔐 methodology, <abbr title="Web Real Time Communication">WebRTC</abbr> to be specific, that means the sharing happens between the two of
+            the connected users and the server cannot see what's being shared. The server is initially leveraged to act as the 
+            <abbr title="The process used to create a peer-to-peer connection."><i>Signaling</i></abbr> server, but after a connection is estabilished between the peers,
+            server no longer intervenes/intercepts.
+        </p>
+        <h2 class="heading-1 intro-heading">
+            Status:
+        </h2>
+        <p id="status" class="copyright-desc">Waiting for connection...</p>
+    </div>
+    <div class="video-area jumbotron">
+        <h1 class="heading-1 intro-heading" id="recieving-video" hidden>
+            Recieving Video
+        </h1>
+        <br>
+        <video src="" id="video-source" width="600" height="300" controls autoplay></video>
+    </div>
+    <script src="./simplepeer.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="/script.js"></script>
+</body>
+</html>
