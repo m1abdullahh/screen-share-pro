@@ -89,7 +89,7 @@ const stopSharing = (ev) => {
 }
 
 socket = io();
-peer = new SimplePeer({initiator: localStorage.getItem('user-name') === 'Saba',
+peer = new SimplePeer({initiator: localStorage.getItem('initiator') === 'true',
 trickle: false})
 
 peer.on('error', err => console.log('Error', err))
