@@ -2,9 +2,10 @@
 Share your display or recieve and stream another friend's (peer) display entirely in the browser. As easy as 1, 2, 3 ✨.
 
 Screen Share Pro (a name that i coined in less than 10 seconds) is a screen sharing mini tool that leverages the features provided
-by WebRTC to create a P2P (peer-to-peer) connection between (in the meantime, only) two browsers. It uses a nodejs server bundled with
-socket.io to act as a signaling server, and once the connection is estabilished and the two peer are connected, server goes on standby
-and you (or the other one) can start sharing their screen.
+by <a href="https://webrtc.org/">WebRTC</a> to create a <a href="https://en.wikipedia.org/wiki/Peer-to-peer">P2P (peer-to-peer)</a>
+connection between (in the meantime, only) two browsers. It uses a nodejs server bundled with <a href="https://socket.io/">socket.io</a>
+to act as a signaling server, and once the connection is estabilished and the two peer are connected, server goes on standby and you
+(or the other one) can start sharing their screen.
 
 Note: Either one of the peers must be an Initiator, an Initiator is a peer that has the priviliages to start a sceeen share,
 while the other peer, not being the Initiator, can only stream the video. You can become the Initiator by storing a key-value pair in
@@ -13,3 +14,12 @@ JS will read your page's local storage and, upon identifying the initiator, will
 recieving peer. For confirmation, you will also see a <i>snackbar</i> in the bottom left corner telling whether you are the Initiator
 or the recieving peer. If both of the peer are recieving peers or both are the Initiators, a connection won't be estabilished and stream
 sharing won't be possible.
+
+FAQs:
+  Q: What's with the certificate files in the cert directory?
+    A: Sometime in the development stage, the page that was not having a valid SSL cert, was not allowing the browser to send system audio,
+      so I put together a dummy localhost cert, and it worked fine. But later, after I had tested the page in a secure context, the browser
+      was then allowing the audio over an unsecure context. I dunno whether it was me or the browser, but that happend.
+      So the purpose of the certs in the cert directory is to enable you to send audio over https if http doesn't allow you. No extra config
+      is necessary, node will actually start two servers, an http one, and another one with https. If the app doesn't work properly in http,
+      use https.
