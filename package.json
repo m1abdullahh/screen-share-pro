@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "jsonabc": "^2.3.1",
-    "nodemon": "^2.0.18",
+    "nodemon": "^2.0.20",
     "socket.io": "^4.5.1"
   }
 }
