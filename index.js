@@ -6,8 +6,6 @@ const https = require("https");
 const fs = require("fs");
 
 console.log(process.platform);
-console.log(process.connected);
-console.log(process.platform);
 // Settings for secure https server
 const options = {
     key: fs.readFileSync("./cert/cert.key"),
