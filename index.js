@@ -5,6 +5,8 @@ const { Server } = require("socket.io");
 const https = require("https");
 const fs = require("fs");
 
+// issue 1: Adding the platform check.
+console.log(process.platform);
 // Settings for secure https server
 const options = {
     key: fs.readFileSync("./cert/cert.key"),
