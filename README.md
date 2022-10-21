@@ -17,12 +17,12 @@ sharing won't be possible.
 
 FAQs:  
   > - Q: What's with the certificate files in the cert directory?  
-    A: Sometime in the development stage, the page that was not having a valid SSL cert, was not allowing the browser to send system audio,
-      so I put together a dummy localhost cert, and it worked fine. But later, after I had tested the page in a secure context, the browser
-      was then allowing the audio over an unsecure context. I dunno whether it was me or the browser, but that happend.
-      So the purpose of the certs in the cert directory is to enable you to send audio over https if http doesn't allow you. No extra config
-      is necessary, node will actually start two servers, an http one, and another one with https. If the app doesn't work properly in http,
-      use https.  
+    A: Sometime in the development stage, because the app was not having a valid SSL cert, JavaScript (or the mediaDevices API) was not
+    allowing the browser to send system audio, so I put together a dummy localhost cert, and it worked fine. But later, after I had tested
+    the page in a secure context, the browser was then allowing the audio in an unsecure context. I dunno whether it was me or the browser,
+    but that happend. So the purpose of the certs in the cert directory is to enable you to send audio over https if http doesn't allow you.
+    No extra config is necessary, node will actually start two servers, an http one, and another one with https. If the app doesn't work
+    properly in http, use https.  
   > - Q: Why does this app have such a large CSS bundle?  
     A: At this point, this app uses three CSS bundles. A bootstrap lib, main style sheet, and a big CSS file called all.cs. This all.css is
     the font-awesome emojis file and since this web app uses some of those emojis, it has to load that file too. Removing it will, of course, 
